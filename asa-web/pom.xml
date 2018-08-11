@@ -9,6 +9,7 @@
         <artifactId>021Framwork</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+    <packaging>war</packaging>
 
     <artifactId>asa-web</artifactId>
     <version>1.0-SNAPSHOT</version>
