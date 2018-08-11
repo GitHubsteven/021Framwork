@@ -10,8 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>021Framework</groupId>
-    <artifactId>business-servcie</artifactId>
+    <artifactId>asa-bean</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     
