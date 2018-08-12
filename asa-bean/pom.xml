@@ -9,9 +9,10 @@
         <artifactId>021Framwork</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+    <packaging>war</packaging>
 
     <artifactId>asa-bean</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    
+
 </project>
