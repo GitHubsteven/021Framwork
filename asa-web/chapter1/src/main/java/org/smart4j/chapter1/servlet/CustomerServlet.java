@@ -1,4 +1,4 @@
-package org.smart4j.chapter1.controller;
+package org.smart4j.chapter1.servlet;
 
 import org.smart4j.chapter1.model.Customer;
 import org.smart4j.chapter1.service.CustomerService;
@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * to be frank, one request 2 one servlet, while the strangest thing is servlet hide the detail
+ * of the transfer between the jsp and servlet. Maybe the jsp just is realized by servlet. And for this,
+ * servlet can build the jsp to the html page totally different from the ajax/ xmlHttp technology.
+ */
 @WebServlet("/customer")
 public class CustomerServlet extends HttpServlet {
     private CustomerService customerService;

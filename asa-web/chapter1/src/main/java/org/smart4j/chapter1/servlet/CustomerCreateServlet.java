@@ -1,4 +1,4 @@
-package org.smart4j.chapter1.controller;
+package org.smart4j.chapter1.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 编辑客户
+ * 创建客户
  */
-@WebServlet("/customer_edit")
-public class CustomerEditServlet extends HttpServlet {
+@WebServlet("/customer_create")
+public class CustomerCreateServlet extends HttpServlet {
 
     /**
-     * 进入 编辑客户 界面
+     * 进入 创建客户 界面
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -22,10 +22,10 @@ public class CustomerEditServlet extends HttpServlet {
     }
 
     /**
-     * 处理 编辑客户 请求
+     * 处理 创建客户 请求
      */
     @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // TODO
     }
 }
