@@ -8,11 +8,18 @@
         <groupId>021Framework</groupId>
         <artifactId>021Framwork</artifactId>
         <version>1.0-SNAPSHOT</version>
-        
+
     </parent>
 
     <artifactId>business-service</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>021Framework</groupId>
+            <artifactId>asa-framework</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>
