@@ -1,0 +1,1 @@
+**A simple question how to recognize the controller url as servlet url**
