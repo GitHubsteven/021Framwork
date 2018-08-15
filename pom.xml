@@ -20,7 +20,7 @@
         <module>asa-web</module>
         <module>asa-framework</module>
         <module>asa-bean</module>
-        <module>asa-util</module>
+        <module>asa-org.asa.framewrok.helper.util</module>
     </modules>
 
     <dependencyManagement>

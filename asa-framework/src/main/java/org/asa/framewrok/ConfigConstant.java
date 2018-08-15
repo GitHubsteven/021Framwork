@@ -1,3 +1,5 @@
+package org.asa.framewrok;
+
 /**
  * 提供相关配置项常量
  *

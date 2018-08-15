@@ -3290,7 +3290,7 @@ jQuery.extend({
 		return deferred;
 	},
 
-	// Deferred helper
+	// Deferred org.asa.framewrok.helper
 	when: function( subordinate /* , ..., subordinateN */ ) {
 		var i = 0,
 			resolveValues = slice.call( arguments ),

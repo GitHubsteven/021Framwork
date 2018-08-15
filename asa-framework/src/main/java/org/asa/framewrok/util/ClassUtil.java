@@ -1,6 +1,5 @@
-package util;
+package org.asa.framewrok.util;
 
-import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +9,6 @@ import java.io.FileFilter;
 import java.io.IOException;
 import java.net.JarURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Set;
@@ -92,7 +90,6 @@ public class ClassUtil {
                                 }
                             }
                         }
-
                     }
                 }
             }
@@ -118,7 +115,7 @@ public class ClassUtil {
                 //对文件进行加载
                 String className = fileName.substring(0, fileName.lastIndexOf("."));
                 if (packageName != null) {
-                    className = packageName + className;
+                    className = packageName + "." + className;
                 }
                 doAddClass(classSet, className);
             } else {
@@ -138,6 +135,5 @@ public class ClassUtil {
         Class<?> cls = loadClass(className);
         classSet.add(cls);
     }
-
 
 }
