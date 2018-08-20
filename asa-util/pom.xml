@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>asa-org.asa.framewrok.helper.util</artifactId>
+    <artifactId>asa-util</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 
