@@ -1,9 +1,6 @@
 package org.asa.framewrok;
 
-import org.asa.framewrok.helper.BeanHelper;
-import org.asa.framewrok.helper.ClassHelper;
-import org.asa.framewrok.helper.ControllerHelper;
-import org.asa.framewrok.helper.IocHelper;
+import org.asa.framewrok.helper.*;
 import org.asa.framewrok.util.ClassUtil;
 
 /**
@@ -18,7 +15,7 @@ public final class HelperLoader {
         Class<?>[] classList = {
                 ClassHelper.class,
                 BeanHelper.class,
-//            AopHelper.class,              todo release this comment
+                AopHelper.class,
                 IocHelper.class,
                 ControllerHelper.class
         };
