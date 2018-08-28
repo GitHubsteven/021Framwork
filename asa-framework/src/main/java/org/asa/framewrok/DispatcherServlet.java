@@ -4,9 +4,7 @@ import org.asa.framewrok.bean.Data;
 import org.asa.framewrok.bean.Handler;
 import org.asa.framewrok.bean.Param;
 import org.asa.framewrok.bean.View;
-import org.asa.framewrok.helper.BeanHelper;
-import org.asa.framewrok.helper.ConfigHelper;
-import org.asa.framewrok.helper.ControllerHelper;
+import org.asa.framewrok.helper.*;
 import org.asa.framewrok.util.*;
 
 import javax.servlet.ServletConfig;
@@ -82,11 +80,23 @@ public class DispatcherServlet extends HttpServlet {
                     }
                 }
             }
+            Param param;
+            if (UploadHelper.isMultipart(req)) {
+                param = UploadHelper.createParam(req);
+            } else {
+                param = RequestHelper.createParam(req);
+            }
 
-            Param param = new Param(paramMap);
             //call action method
             Method actionMethod = handler.getActionMethod();
-            Object result = ReflectionUtil.invoke(controllerBean, actionMethod, param);
+            Object result;
+            //避免强制需要参数
+            if (param.isEmpty()) {
+                result = ReflectionUtil.invoke(controllerBean, actionMethod, param);
+            } else {
+                result = ReflectionUtil.invoke(controllerBean, actionMethod);
+            }
+
             if (result instanceof View) {
                 //return jsp page
                 View view = (View) result;

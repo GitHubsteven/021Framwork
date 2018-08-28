@@ -1,7 +1,9 @@
 package org.smart4j.chapter1.service;
 
 import org.asa.framewrok.annotation.Transaction;
+import org.asa.framewrok.bean.FileParam;
 import org.asa.framewrok.helper.DatabaseHelper;
+import org.asa.framewrok.helper.UploadHelper;
 import org.smart4j.chapter1.model.Customer;
 
 import java.util.List;
@@ -38,6 +40,20 @@ public class CustomerService {
 //        return true;
     }
 
+
+    /**
+     * 创建客户
+     */
+    @Transaction
+    public boolean createCustomer(Map<String, Object> fieldMap, FileParam fileParam) {
+        boolean result = DatabaseHelper.insertEntity(Customer.class, fieldMap);
+        if (result) {
+            UploadHelper.uploadFile("/tmp/upload/", fileParam);
+        }
+        return result;
+    }
+
+
     /**
      * 更新客户
      */
@@ -67,5 +83,11 @@ public class CustomerService {
             bean.setTelephone("tel" + i);
             return bean;
         }).collect(Collectors.toList());
+    }
+
+    public static void main(String[] args) {
+        CustomerService customerService = new CustomerService();
+        Customer customer = customerService.getCustomer(1L);
+        System.out.println(customer.getName());
     }
 }
