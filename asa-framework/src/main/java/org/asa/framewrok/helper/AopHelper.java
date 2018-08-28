@@ -1,6 +1,8 @@
 package org.asa.framewrok.helper;
 
 import org.asa.framewrok.annotation.Aspect;
+import org.asa.framewrok.annotation.Service;
+import org.asa.framewrok.annotation.Transaction;
 import org.asa.framewrok.proxy.AspectProxy;
 import org.asa.framewrok.proxy.Proxy;
 import org.asa.framewrok.proxy.ProxyManager;
@@ -100,6 +102,20 @@ public final class AopHelper {
             }
         }
         return targetMap;
+    }
+
+    public static void addAspectProxy(Map<Class<?>, Set<Class<?>>> proxyMap) throws Exception {
+        Set<Class<?>> proxyClassSet = ClassHelper.getClassSetBySuperClass(AspectProxy.class);
+        for (Class<?> proxyClass : proxyClassSet) {
+            Aspect aspect = proxyClass.getAnnotation(Aspect.class);
+            Set<Class<?>> targetClassSet = createTargetClassSet(aspect);
+            proxyMap.put(proxyClass, targetClassSet);
+        }
+    }
+
+    public static void addTransactionProxy(Map<Class<?>, Set<Class<?>>> proxyMap) {
+        Set<Class<?>> serviceClassSet = ClassHelper.getClassSetByAnnotation(Service.class);
+        proxyMap.put(Transaction.class, serviceClassSet);
     }
 
 }

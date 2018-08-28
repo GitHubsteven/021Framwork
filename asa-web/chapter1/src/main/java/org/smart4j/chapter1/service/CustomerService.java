@@ -1,5 +1,7 @@
 package org.smart4j.chapter1.service;
 
+import org.asa.framewrok.annotation.Transaction;
+import org.asa.framewrok.helper.DatabaseHelper;
 import org.smart4j.chapter1.model.Customer;
 
 import java.util.List;
@@ -13,8 +15,8 @@ public class CustomerService {
      */
     public List<Customer> getCustomerList() {
         String sql = "SELECT * FROM customer";
-//        return DatabaseHelper.queryEntityList(Customer.class, sql);
-        return createBean(2);
+        return DatabaseHelper.queryEntityList(Customer.class, sql);
+//        return createBean(2);
     }
 
     /**
@@ -22,33 +24,36 @@ public class CustomerService {
      */
     public Customer getCustomer(long id) {
         String sql = "SELECT * FROM customer WHERE id = ?";
-//        return DatabaseHelper.queryEntity(Customer.class, sql, id);
-        return createBean(1).get(0);
+        return DatabaseHelper.queryEntity(Customer.class, sql, id);
+//        return createBean(1).get(0);
 //        return new Customer().setId(1L);
     }
 
     /**
      * 创建客户
      */
+    @Transaction
     public boolean createCustomer(Map<String, Object> fieldMap) {
-//        return DatabaseHelper.insertEntity(Customer.class, fieldMap);
-        return true;
+        return DatabaseHelper.insertEntity(Customer.class, fieldMap);
+//        return true;
     }
 
     /**
      * 更新客户
      */
+    @Transaction
     public boolean updateCustomer(long id, Map<String, Object> fieldMap) {
-        return true;
-//        return DatabaseHelper.updateEntity(Customer.class, id, fieldMap);
+//        return true;
+        return DatabaseHelper.updateEntity(Customer.class, id, fieldMap);
     }
 
     /**
      * 删除客户
      */
+    @Transaction
     public boolean deleteCustomer(long id) {
-        return true;
-//        return DatabaseHelper.deleteEntity(Customer.class, id);
+//        return true;
+        return DatabaseHelper.deleteEntity(Customer.class, id);
     }
 
     private List<Customer> createBean(int number) {
