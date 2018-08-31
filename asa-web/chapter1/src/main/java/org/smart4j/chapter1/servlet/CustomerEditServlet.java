@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * 编辑客户
  */
-@WebServlet("/customer_edit")
+//@WebServlet("/customer_edit")
 public class CustomerEditServlet extends HttpServlet {
 
     /**

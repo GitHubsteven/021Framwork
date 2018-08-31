@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * 创建客户
  */
-@WebServlet("/customer_create")
+//@WebServlet("/customer_create")
 public class CustomerCreateServlet extends HttpServlet {
 
     /**
@@ -19,6 +19,7 @@ public class CustomerCreateServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // TODO
+        System.out.println("jet.xie");
     }
 
     /**
@@ -28,4 +29,6 @@ public class CustomerCreateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // TODO
     }
+
+
 }

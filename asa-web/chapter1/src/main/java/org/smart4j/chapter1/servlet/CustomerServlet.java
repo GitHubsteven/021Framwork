@@ -16,7 +16,7 @@ import java.util.List;
  * of the transfer between the jsp and servlet. Maybe the jsp just is realized by servlet. And for this,
  * servlet can build the jsp to the html page totally different from the ajax/ xmlHttp technology.
  */
-@WebServlet("/customer")
+//@WebServlet("/customer")
 public class CustomerServlet extends HttpServlet {
     private CustomerService customerService;
 

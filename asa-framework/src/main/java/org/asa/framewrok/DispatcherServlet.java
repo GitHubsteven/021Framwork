@@ -7,10 +7,12 @@ import org.asa.framewrok.bean.View;
 import org.asa.framewrok.helper.*;
 import org.asa.framewrok.util.*;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,9 +29,10 @@ import java.util.Map;
  * @author: jet.xie
  * @Date: 2018/8/16
  * @Time: 13:45
- * @Description:
+ * @Description: loadOnStartup = 0
  * @version: 1.0.0
  */
+@WebServlet(urlPatterns = "/*" )
 public class DispatcherServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {

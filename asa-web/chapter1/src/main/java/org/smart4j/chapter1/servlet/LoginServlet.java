@@ -16,7 +16,7 @@ import java.io.IOException;
  * @Description: login page
  * @version: 1.0.0
  */
-@WebServlet("/login")
+//@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
