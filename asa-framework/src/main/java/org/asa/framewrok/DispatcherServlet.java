@@ -32,7 +32,7 @@ import java.util.Map;
  * @Description: loadOnStartup = 0
  * @version: 1.0.0
  */
-@WebServlet(urlPatterns = "/*" )
+@WebServlet(urlPatterns = "/*")
 public class DispatcherServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -130,6 +130,10 @@ public class DispatcherServlet extends HttpServlet {
                     writer.close();
                 }
             }
+        } else {
+            //todo ,找不到的请求
+//            doGet(req, resp);
         }
     }
+
 }
