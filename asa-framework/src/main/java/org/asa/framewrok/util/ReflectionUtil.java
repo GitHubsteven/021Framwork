@@ -45,13 +45,15 @@ public class ReflectionUtil {
      * 调用方法, to understand: how does spring to manage method invoke
      */
     public static Object invoke(Object conductor, Method method, Object... params) {
+        Object result;
         method.setAccessible(true);
         try {
-            return method.invoke(conductor, params);
+            result = method.invoke(conductor, params);
         } catch (IllegalAccessException | InvocationTargetException e) {
             LOGGER.error("invoke method failure", e);
             throw new RuntimeException(e);
         }
+        return result;
     }
 
     /**

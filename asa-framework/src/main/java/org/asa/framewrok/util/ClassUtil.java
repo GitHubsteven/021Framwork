@@ -120,13 +120,15 @@ public class ClassUtil {
                 doAddClass(classSet, className);
             } else {
                 //如果是文件夹的话，package Path + packageName,然后文件名称变为包名，递归
+                String newPackagePath = packagePath;
                 if (StringUtils.isNotEmpty(packagePath)) {
-                    packagePath = packagePath + "/" + packageName;
+                    newPackagePath = packagePath + "/" + fileName;
                 }
+                String newPackageName = packageName;
                 if (StringUtils.isNotEmpty(packageName)) {
-                    packageName = packageName + "." + fileName;
+                    newPackageName = packageName + "." + fileName;
                 }
-                addClass(classSet, packagePath, packageName);
+                addClass(classSet, newPackagePath, newPackageName);
             }
         }
     }

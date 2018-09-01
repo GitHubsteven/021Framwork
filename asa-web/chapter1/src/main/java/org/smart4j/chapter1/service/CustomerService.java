@@ -1,5 +1,6 @@
 package org.smart4j.chapter1.service;
 
+import org.asa.framewrok.annotation.Service;
 import org.asa.framewrok.annotation.Transaction;
 import org.asa.framewrok.bean.FileParam;
 import org.asa.framewrok.helper.DatabaseHelper;
@@ -11,6 +12,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+@Service
 public class CustomerService {
     /**
      * 获取客户列表

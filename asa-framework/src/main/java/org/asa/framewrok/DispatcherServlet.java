@@ -95,9 +95,9 @@ public class DispatcherServlet extends HttpServlet {
             Object result;
             //避免强制需要参数
             if (param.isEmpty()) {
-                result = ReflectionUtil.invoke(controllerBean, actionMethod, param);
-            } else {
                 result = ReflectionUtil.invoke(controllerBean, actionMethod);
+            } else {
+                result = ReflectionUtil.invoke(controllerBean, actionMethod, param);
             }
 
             if (result instanceof View) {
