@@ -19,6 +19,7 @@
         <module>pre-work</module>
         <module>business-service</module>
         <module>asa-web</module>
+        <module>asa-web-demo</module>
         <module>asa-framework</module>
         <module>asa-bean</module>
         <module>asa-util</module>

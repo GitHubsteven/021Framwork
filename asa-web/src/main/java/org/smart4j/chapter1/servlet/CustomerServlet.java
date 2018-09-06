@@ -4,7 +4,6 @@ import org.smart4j.chapter1.model.Customer;
 import org.smart4j.chapter1.service.CustomerService;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

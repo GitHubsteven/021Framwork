@@ -9,7 +9,6 @@
         <artifactId>021Framwork</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <packaging>jar</packaging>
 
     <artifactId>asa-framework</artifactId>
     <version>1.0-SNAPSHOT</version>
