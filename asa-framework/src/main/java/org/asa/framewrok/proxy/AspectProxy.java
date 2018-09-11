@@ -24,12 +24,12 @@ public abstract class AspectProxy implements Proxy {
      */
     @Override
     public final Object doProxy(ProxyChain proxyChain) throws Throwable {
-        Object result = null;
+        Object result;
 
         Class<?> cls = proxyChain.getTargetClass();
         Method method = proxyChain.getTargetMethod();
         Object[] params = proxyChain.getMethodParams();
-        begin();            //这是要干嘛？判断是否要拦截？好像是的，但是为什么还是要有before，after和其他的，不是放在proxyList中吗？
+        begin();            //
         try {
             if (intercept(cls, method, params)) {
                 before(cls, method, params);

@@ -12,37 +12,31 @@ import java.lang.reflect.Method;
  * Created with IntelliJ IDEA.
  *
  * @author: jet.xie
- * @Date: 2018/8/23
- * @Time: 15:34
+ * @Date: 2018/9/11
+ * @Time: 15:18
  * @Description:
  * @version: 1.0.0
  */
 @Aspect(Controller.class)
-public class ControllerAspect extends AspectProxy {
+public class SignatureAspect extends AspectProxy {
     private static final Logger LOGGER = LoggerFactory.getLogger(ControllerAspect.class);
-
-    private long begin;
+    private static final String operator = "asa.xie";
 
     @Override
     public void before(Class<?> cls, Method method, Object[] params) throws Throwable {
         String name = method.getName();
         if (name.contains("index")) {
-            LOGGER.debug("---------- begin time ----------");
-            LOGGER.debug(String.format("class: %s", cls.getName()));
-            LOGGER.debug(String.format("method: %s", name));
-            begin = System.currentTimeMillis();
+            LOGGER.debug("---------- begin signature ----------");
+            LOGGER.debug(String.format("I am from: %s", operator));
         }
-
     }
 
     @Override
     public void after(Class<?> cls, Method method, Object[] params, Object result) throws Throwable {
         String name = method.getName();
         if (name.contains("index")) {
-            LOGGER.debug(String.format("time: %dms", System.currentTimeMillis() - begin));
-            LOGGER.debug("----------- end time-----------");
+            LOGGER.debug(String.format("I leave from : %s", operator));
+            LOGGER.debug("----------- end signature-----------");
         }
-
-
     }
 }

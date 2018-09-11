@@ -9,7 +9,7 @@ package org.asa.framewrok.proxy;
 public interface Proxy {
 
     /**
-     * 执行链式代理
+     * 执行链式代理，你到底执行的是什么呢？
      */
     Object doProxy(ProxyChain proxyChain) throws Throwable;
 }

@@ -1,11 +1,12 @@
 package org.smart4j.chapter1.controller;
 
 
-import org.asa.framewrok.annotation.Aspect;
-import org.asa.framewrok.helper.AopHelper;
-import org.asa.framewrok.helper.ClassHelper;
+import org.asa.framewrok.proxy.Proxy;
+import org.asa.framewrok.proxy.ProxyManager;
+import org.smart4j.chapter1.aspect.ControllerAspect;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,10 +19,10 @@ import java.util.Set;
  */
 public class Main {
     public static void main(String[] args) {
-        Set<Class<?>> aspectSet = ClassHelper.getClassSetByAnnotation(Aspect.class);
-        for (Class<?> aspect : aspectSet) {
-            System.out.println(aspect.getName());
-        }
-        AopHelper.test();
+        Class cls = CustomerController.class;
+        List<Proxy> proxies = new ArrayList<>();
+        proxies.add(new ControllerAspect());
+        Object proxy = ProxyManager.createProxy(cls, proxies);
+        System.out.println(proxy.getClass());
     }
 }
