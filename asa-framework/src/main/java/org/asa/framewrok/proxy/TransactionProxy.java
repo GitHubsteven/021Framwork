@@ -25,6 +25,7 @@ public class TransactionProxy implements Proxy {
         Object result;
         Boolean flag = FLAG_HOLDER.get();
         Method method = proxyChain.getTargetMethod();
+        //在代理中执行方法代理的时候，判断是否声明了事务，如果声明了并且当前的线程线程池的事务没有被提交
         if (!flag && method.isAnnotationPresent(Transaction.class)) {
             try {
                 FLAG_HOLDER.set(true);
