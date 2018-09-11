@@ -33,7 +33,7 @@ public abstract class AspectProxy implements Proxy {
         try {
             if (intercept(cls, method, params)) {
                 before(cls, method, params);
-                proxyChain.doProxyChain();
+                result = proxyChain.doProxyChain();
                 after(cls, method, params, result);
             } else {
                 result = proxyChain.doProxyChain();

@@ -50,7 +50,7 @@ public final class AopHelper {
     private static Set<Class<?>> createTargetClassSet(Aspect aspect) throws Exception {
         Set<Class<?>> targetClassSet = new HashSet<>();
         Class<? extends Annotation> annotation = aspect.value();
-        if (annotation.equals(Aspect.class)) {
+        if (!annotation.equals(Aspect.class)) {
             targetClassSet.addAll(ClassHelper.getClassSetByAnnotation(annotation));
         }
         return targetClassSet;
@@ -118,4 +118,7 @@ public final class AopHelper {
         proxyMap.put(Transaction.class, serviceClassSet);
     }
 
+    public static void test() {
+        System.out.println("test");
+    }
 }

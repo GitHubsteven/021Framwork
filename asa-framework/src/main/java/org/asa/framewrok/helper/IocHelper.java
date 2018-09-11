@@ -40,8 +40,4 @@ public class IocHelper {
         }
     }
 
-    public static void test() {
-        System.out.println("test");
-    }
-
 }

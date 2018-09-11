@@ -14,6 +14,5 @@ import org.asa.framewrok.helper.IocHelper;
  */
 public class Main {
     public static void main(String[] args) {
-        IocHelper.test();
     }
 }

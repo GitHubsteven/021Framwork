@@ -1,7 +1,11 @@
 package org.smart4j.chapter1.controller;
 
 
-import org.asa.framewrok.helper.IocHelper;
+import org.asa.framewrok.annotation.Aspect;
+import org.asa.framewrok.helper.AopHelper;
+import org.asa.framewrok.helper.ClassHelper;
+
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,6 +18,10 @@ import org.asa.framewrok.helper.IocHelper;
  */
 public class Main {
     public static void main(String[] args) {
-        IocHelper.test();
+        Set<Class<?>> aspectSet = ClassHelper.getClassSetByAnnotation(Aspect.class);
+        for (Class<?> aspect : aspectSet) {
+            System.out.println(aspect.getName());
+        }
+        AopHelper.test();
     }
 }
