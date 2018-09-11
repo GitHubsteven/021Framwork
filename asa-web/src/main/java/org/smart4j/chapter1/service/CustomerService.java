@@ -74,6 +74,7 @@ public class CustomerService {
         return DatabaseHelper.deleteEntity(Customer.class, id);
     }
 
+    @Deprecated
     private List<Customer> createBean(int number) {
         return IntStream.range(0, number).mapToObj(i -> {
             Customer bean = new Customer();
