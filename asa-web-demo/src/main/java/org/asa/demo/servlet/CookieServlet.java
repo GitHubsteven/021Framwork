@@ -15,7 +15,7 @@ import java.io.PrintWriter;
  * @author: jet.xie
  * @Date: 2018/9/12
  * @Time: 10:20
- * @Description:
+ * @Description: 参考网站： https://blog.csdn.net/Baple/article/details/24781653
  * Cookie的含义是“服务器送给浏览器的甜点”，即服务器在响应请求时可以将一些数据以“键-值”对的形式通过响应信息保存在客户端。
  * 当浏览器再次访问相同的应用时，会将原先的Cookie通过请求信息带到服务器端。
  * @version: 1.0.0
